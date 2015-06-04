@@ -41,7 +41,13 @@ sequelize.sync().success(function() {
         pregunta: 'Capital de Italia',
         respuesta: 'Roma',
       }).success(function() {
-          console.log('Primera pregunta');
+        console.log('Primera pregunta');
+      });
+      Quiz.create({
+        pregunta: 'Inventor de la bombilla',
+        respuesta: 'Edison',
+      }).success(function() {
+        console.log('Segunda pregunta');
       });
       Quiz.create({
         pregunta: 'Capital de Portugal',
@@ -49,7 +55,8 @@ sequelize.sync().success(function() {
       }).success(function() {
         console.log('Base de datos inicializada');
       });
-    } else {
+    }
+    else {
       console.log('Base de datos abierta')
     }
   });
