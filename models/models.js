@@ -49,6 +49,8 @@ sequelize.sync().success(function() {
       }).success(function() {
         console.log('Base de datos inicializada');
       });
+    } else {
+      console.log('Base de datos abierta')
     }
   });
 });
