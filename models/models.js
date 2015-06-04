@@ -1,3 +1,5 @@
+// models/models.js
+
 var path = require('path');
 
 // Postgres DATABASE_URL = postgres://user:passwd@host:port/database
@@ -38,6 +40,12 @@ sequelize.sync().success(function() {
       Quiz.create({
         pregunta: 'Capital de Italia',
         respuesta: 'Roma',
+      }).success(function() {
+          console.log('Primera pregunta');
+      });
+      Quiz.create({
+        pregunta: 'Capital de Portugal',
+        respuesta: 'Lisboa',
       }).success(function() {
         console.log('Base de datos inicializada');
       });
