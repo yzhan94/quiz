@@ -35,3 +35,8 @@ nav span {
 	color: #f61;
 	font-size: smaller;
 }
+.quiz_table {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: auto;
+}

@@ -2,10 +2,10 @@
 
 <form method="get" action="/quizes">
   <input type="text" name="search" />
-  <input type="submit" value="Buscar" />
+  <input type="submit" value="Buscar" placeholder="Buscar preguntas" />
 </form>
 
-<table>
+<table class="quiz_table">
 <% var i; for (i=0; i<quizes.length; i++) { %>
   <tr>
     <td>
@@ -15,6 +15,12 @@
       <a href="quizes/<%= quizes[i].id %>/edit" >
         <input type="button" value="Editar" />
       </a>
+    </td>
+    <td>
+      <form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
+        <input type="submit" value="Borrar" 
+        onclick="return confirm('¿Seguro que quiere borrar la pregunta \'<%= quizes[i].pregunta %>\'? Esta acción no podra ser deshecha.')" />
+      </form>
     </td>
   </tr>
 <% } %>
