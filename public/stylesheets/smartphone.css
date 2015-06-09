@@ -10,5 +10,9 @@ h2 span, section h3 {
 body {
 	font-size: xx-large; }
 
-footer, input {
+footer, input, select {
 	font-size: large; }
+	
+.tema {
+	display: none;
+}

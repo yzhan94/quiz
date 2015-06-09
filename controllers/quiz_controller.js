@@ -39,6 +39,7 @@ exports.new = function(req, res) {
   var quiz = models.Quiz.build({
     pregunta: "",
     respuesta: "",
+    tema: "otro",
   });
 
   res.render('quizes/new', {
@@ -59,7 +60,7 @@ exports.create = function(req, res) {
     }
     else {
       quiz.save({ // guarda en la DB el quiz
-        fields: ["pregunta", "respuesta"]
+        fields: ["pregunta", "respuesta", "tema"]
       }).then(function() {
         res.redirect("/quizes");
       });
@@ -98,6 +99,7 @@ exports.edit = function(req, res) {
 exports.update = function(req, res) {
   req.quiz.pregunta = req.body.quiz.pregunta;
   req.quiz.respuesta = req.body.quiz.respuesta;
+  req.quiz.tema = req.body.quiz.tema;
 
   req.quiz.validate().then(function(err) {
     if (err) {
@@ -108,7 +110,7 @@ exports.update = function(req, res) {
     }
     else {
       req.quiz.save({ // guarda en la DB el quiz
-        fields: ["pregunta", "respuesta"]
+        fields: ["pregunta", "respuesta", "tema"]
       }).then(function() {
         res.redirect("/quizes");
       });

@@ -1,10 +1,20 @@
-    <div>
+<div>
     <label>Pregunta: </label>
     <input type="text" name="quiz[pregunta]" value="<%= quiz.pregunta %>" />
-    </div>
-    <div>
+</div>
+<div>
     <label>Respuesta: </label>
     <input type="text" name="quiz[respuesta]" value="<%= quiz.respuesta %>" />
-    </div>
-    <a href="/quizes"><input type="button" value="Cancelar" /></a>
-    <input type="submit" value="OK" />
+</div>
+<div>
+    <label>Tema: </label>
+    <select name="quiz[tema]">
+        <option value="otro" <% if (quiz.tema === "otro") { %> selected <% } %> >Otro</option>
+        <option value="humanidades" <% if (quiz.tema === "humanidades") { %> selected <% } %> >Humanidades</option>
+        <option value="ocio" <% if (quiz.tema === "ocio") { %> selected <% } %> >Ocio</option>
+        <option value="ciencia" <% if (quiz.tema === "ciencia") { %> selected <% } %> >Ciencia</option>
+        <option value="tecnologia" <% if (quiz.tema === "tecnologia") { %> selected <% } %> >Tecnologia</option>
+    </select>
+</div>
+<a href="/quizes"><input type="button" value="Cancelar" /></a>
+<input type="submit" value="OK" />

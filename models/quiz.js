@@ -18,5 +18,19 @@ module.exports = function(sequelize, DataTypes) {
                 }
             }
         },
+        tema: {
+            type: DataTypes.STRING,
+            validate: {
+                notEmpty: {
+                    msg: "-> Falta Tema"
+                },
+                isIn: {
+                    args: [
+                        ["otro", "humanidades", "ocio", "ciencia", "tecnologia"]
+                    ],
+                    msg: "-> Tema Invalido"
+                }
+            }
+        }
     });
 }
