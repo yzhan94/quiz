@@ -11,6 +11,11 @@
     <td>
       <a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a>
     </td>
+    <td>
+      <a href="quizes/<%= quizes[i].id %>/edit" >
+        <input type="button" value="Editar" />
+      </a>
+    </td>
   </tr>
 <% } %>
 </table>

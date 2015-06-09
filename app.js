@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var partials = require('express-partials');
+var methodOverride = require('method-override');
+
 require('dotenv').load(); // para cargar variables de entorno desde el fichero .env
 
 var routes = require('./routes/index');
@@ -26,6 +28,7 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(partials());
+app.use(methodOverride('_method'));
 
 app.use('/', routes);
 
