@@ -1,0 +1,11 @@
+<!-- views/comments/new.ejs -->
+
+<div>
+    <p>Añadir comentario: </p>
+    <form method="post" action="/quizes/<%= quizId %>/comments/" >
+        <div>
+            <textarea name="comment[texto]" placeholder="Escriba aqui su comentario" ></textarea>
+        </div>
+        <input type="submit" value="Enviar" />
+    </form>
+</div>
